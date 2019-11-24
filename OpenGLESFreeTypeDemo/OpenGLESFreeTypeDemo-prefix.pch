@@ -1,0 +1,14 @@
+//
+//  OpenGLESFreeTypeDemo-prefix.pch
+//  OpenGLESFreeTypeDemo
+//
+//  Created by guohaoyang on 2019/11/7.
+//  Copyright © 2019 guohaoyang. All rights reserved.
+//
+
+#ifndef OpenGLESFreeTypeDemo_prefix_pch
+#define OpenGLESFreeTypeDemo_prefix_pch
+
+#include <OpenGLES/ES3/gl.h>
+
+#endif /* OpenGLESFreeTypeDemo_prefix_pch */

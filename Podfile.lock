@@ -1,0 +1,16 @@
+PODS:
+  - freetype (2.6.4)
+
+DEPENDENCIES:
+  - freetype
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - freetype
+
+SPEC CHECKSUMS:
+  freetype: f1607aa45440e7cc17c85c32e901f32b7b801fad
+
+PODFILE CHECKSUM: 27e9d4c1f62546ddafbb32d5c6a2614f04266ae1
+
+COCOAPODS: 1.7.5

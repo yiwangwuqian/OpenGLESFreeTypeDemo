@@ -7,21 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E6145A40753CEC3658B81A0 /* libPods-OpenGLESFreeTypeDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B19BD4BE3D3C7792C4992E /* libPods-OpenGLESFreeTypeDemo.a */; };
 		BE0DF47F2372F9E900B91699 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0DF47E2372F9E900B91699 /* AppDelegate.m */; };
-		BE0DF4822372F9E900B91699 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0DF4812372F9E900B91699 /* SceneDelegate.m */; };
 		BE0DF4852372F9E900B91699 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0DF4842372F9E900B91699 /* ViewController.m */; };
 		BE0DF4882372F9E900B91699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0DF4862372F9E900B91699 /* Main.storyboard */; };
 		BE0DF48A2372F9EC00B91699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0DF4892372F9EC00B91699 /* Assets.xcassets */; };
 		BE0DF48D2372F9EC00B91699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0DF48B2372F9EC00B91699 /* LaunchScreen.storyboard */; };
 		BE0DF4902372F9EC00B91699 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0DF48F2372F9EC00B91699 /* main.m */; };
+		BE0DF49823739AF000B91699 /* Trebuchet MS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE0DF49723739AF000B91699 /* Trebuchet MS.ttf */; };
+		BE0DF4A423743FDA00B91699 /* esCommonTypes.c in Sources */ = {isa = PBXBuildFile; fileRef = BE0DF49A23743FDA00B91699 /* esCommonTypes.c */; };
+		BE0DF4A523743FDA00B91699 /* esTransform.c in Sources */ = {isa = PBXBuildFile; fileRef = BE0DF49B23743FDA00B91699 /* esTransform.c */; };
+		BE0DF4A623743FDA00B91699 /* esShapes.c in Sources */ = {isa = PBXBuildFile; fileRef = BE0DF49D23743FDA00B91699 /* esShapes.c */; };
+		BE0DF4A723743FDA00B91699 /* Simple_Texture2D.c in Sources */ = {isa = PBXBuildFile; fileRef = BE0DF49F23743FDA00B91699 /* Simple_Texture2D.c */; };
+		BE0DF4A823743FDA00B91699 /* esShader.c in Sources */ = {isa = PBXBuildFile; fileRef = BE0DF4A123743FDA00B91699 /* esShader.c */; };
+		BE0DF4A923743FDA00B91699 /* esUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = BE0DF4A223743FDA00B91699 /* esUtil.c */; };
+		BE0DF4AA23743FDA00B91699 /* FileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0DF4A323743FDA00B91699 /* FileWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11B19BD4BE3D3C7792C4992E /* libPods-OpenGLESFreeTypeDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenGLESFreeTypeDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0DF47A2372F9E900B91699 /* OpenGLESFreeTypeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLESFreeTypeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0DF47D2372F9E900B91699 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE0DF47E2372F9E900B91699 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BE0DF4802372F9E900B91699 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		BE0DF4812372F9E900B91699 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		BE0DF4832372F9E900B91699 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BE0DF4842372F9E900B91699 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BE0DF4872372F9E900B91699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,6 +36,20 @@
 		BE0DF48C2372F9EC00B91699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE0DF48E2372F9EC00B91699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0DF48F2372F9EC00B91699 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE0DF49723739AF000B91699 /* Trebuchet MS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trebuchet MS.ttf"; sourceTree = "<group>"; };
+		BE0DF49A23743FDA00B91699 /* esCommonTypes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = esCommonTypes.c; sourceTree = "<group>"; };
+		BE0DF49B23743FDA00B91699 /* esTransform.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = esTransform.c; sourceTree = "<group>"; };
+		BE0DF49C23743FDA00B91699 /* esUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = esUtil.h; sourceTree = "<group>"; };
+		BE0DF49D23743FDA00B91699 /* esShapes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = esShapes.c; sourceTree = "<group>"; };
+		BE0DF49E23743FDA00B91699 /* FileWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileWrapper.h; sourceTree = "<group>"; };
+		BE0DF49F23743FDA00B91699 /* Simple_Texture2D.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Simple_Texture2D.c; sourceTree = "<group>"; };
+		BE0DF4A023743FDA00B91699 /* esCommonTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = esCommonTypes.h; sourceTree = "<group>"; };
+		BE0DF4A123743FDA00B91699 /* esShader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = esShader.c; sourceTree = "<group>"; };
+		BE0DF4A223743FDA00B91699 /* esUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = esUtil.c; sourceTree = "<group>"; };
+		BE0DF4A323743FDA00B91699 /* FileWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileWrapper.m; sourceTree = "<group>"; };
+		BE0DF4AB237440C000B91699 /* OpenGLESFreeTypeDemo-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenGLESFreeTypeDemo-prefix.pch"; sourceTree = "<group>"; };
+		C9449A923506E2013EC46B7A /* Pods-OpenGLESFreeTypeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenGLESFreeTypeDemo.debug.xcconfig"; path = "Target Support Files/Pods-OpenGLESFreeTypeDemo/Pods-OpenGLESFreeTypeDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DA99DDF8106E6B2832DAD7A3 /* Pods-OpenGLESFreeTypeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenGLESFreeTypeDemo.release.xcconfig"; path = "Target Support Files/Pods-OpenGLESFreeTypeDemo/Pods-OpenGLESFreeTypeDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6145A40753CEC3658B81A0 /* libPods-OpenGLESFreeTypeDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +69,8 @@
 			children = (
 				BE0DF47C2372F9E900B91699 /* OpenGLESFreeTypeDemo */,
 				BE0DF47B2372F9E900B91699 /* Products */,
+				FBFBDF07FFC8687A29D8C59D /* Pods */,
+				DFCCBE400DC9A96F9CBABB97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,10 +85,10 @@
 		BE0DF47C2372F9E900B91699 /* OpenGLESFreeTypeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BE0DF49923743FDA00B91699 /* Utils */,
+				BE0DF49623739AF000B91699 /* Resources */,
 				BE0DF47D2372F9E900B91699 /* AppDelegate.h */,
 				BE0DF47E2372F9E900B91699 /* AppDelegate.m */,
-				BE0DF4802372F9E900B91699 /* SceneDelegate.h */,
-				BE0DF4812372F9E900B91699 /* SceneDelegate.m */,
 				BE0DF4832372F9E900B91699 /* ViewController.h */,
 				BE0DF4842372F9E900B91699 /* ViewController.m */,
 				BE0DF4862372F9E900B91699 /* Main.storyboard */,
@@ -72,8 +96,51 @@
 				BE0DF48B2372F9EC00B91699 /* LaunchScreen.storyboard */,
 				BE0DF48E2372F9EC00B91699 /* Info.plist */,
 				BE0DF48F2372F9EC00B91699 /* main.m */,
+				BE0DF4AB237440C000B91699 /* OpenGLESFreeTypeDemo-prefix.pch */,
 			);
 			path = OpenGLESFreeTypeDemo;
+			sourceTree = "<group>";
+		};
+		BE0DF49623739AF000B91699 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE0DF49723739AF000B91699 /* Trebuchet MS.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE0DF49923743FDA00B91699 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BE0DF49A23743FDA00B91699 /* esCommonTypes.c */,
+				BE0DF49B23743FDA00B91699 /* esTransform.c */,
+				BE0DF49C23743FDA00B91699 /* esUtil.h */,
+				BE0DF49D23743FDA00B91699 /* esShapes.c */,
+				BE0DF49E23743FDA00B91699 /* FileWrapper.h */,
+				BE0DF4A323743FDA00B91699 /* FileWrapper.m */,
+				BE0DF49F23743FDA00B91699 /* Simple_Texture2D.c */,
+				BE0DF4A023743FDA00B91699 /* esCommonTypes.h */,
+				BE0DF4A123743FDA00B91699 /* esShader.c */,
+				BE0DF4A223743FDA00B91699 /* esUtil.c */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DFCCBE400DC9A96F9CBABB97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11B19BD4BE3D3C7792C4992E /* libPods-OpenGLESFreeTypeDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBFBDF07FFC8687A29D8C59D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9449A923506E2013EC46B7A /* Pods-OpenGLESFreeTypeDemo.debug.xcconfig */,
+				DA99DDF8106E6B2832DAD7A3 /* Pods-OpenGLESFreeTypeDemo.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +150,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE0DF4932372F9EC00B91699 /* Build configuration list for PBXNativeTarget "OpenGLESFreeTypeDemo" */;
 			buildPhases = (
+				1186C5F014B21C9373A2DCAA /* [CP] Check Pods Manifest.lock */,
 				BE0DF4762372F9E900B91699 /* Sources */,
 				BE0DF4772372F9E900B91699 /* Frameworks */,
 				BE0DF4782372F9E900B91699 /* Resources */,
@@ -135,21 +203,53 @@
 			files = (
 				BE0DF48D2372F9EC00B91699 /* LaunchScreen.storyboard in Resources */,
 				BE0DF48A2372F9EC00B91699 /* Assets.xcassets in Resources */,
+				BE0DF49823739AF000B91699 /* Trebuchet MS.ttf in Resources */,
 				BE0DF4882372F9E900B91699 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1186C5F014B21C9373A2DCAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenGLESFreeTypeDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BE0DF4762372F9E900B91699 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0DF4A523743FDA00B91699 /* esTransform.c in Sources */,
 				BE0DF4852372F9E900B91699 /* ViewController.m in Sources */,
+				BE0DF4A823743FDA00B91699 /* esShader.c in Sources */,
 				BE0DF47F2372F9E900B91699 /* AppDelegate.m in Sources */,
+				BE0DF4A423743FDA00B91699 /* esCommonTypes.c in Sources */,
 				BE0DF4902372F9EC00B91699 /* main.m in Sources */,
-				BE0DF4822372F9E900B91699 /* SceneDelegate.m in Sources */,
+				BE0DF4A623743FDA00B91699 /* esShapes.c in Sources */,
+				BE0DF4A723743FDA00B91699 /* Simple_Texture2D.c in Sources */,
+				BE0DF4A923743FDA00B91699 /* esUtil.c in Sources */,
+				BE0DF4AA23743FDA00B91699 /* FileWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,10 +387,13 @@
 		};
 		BE0DF4942372F9EC00B91699 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9449A923506E2013EC46B7A /* Pods-OpenGLESFreeTypeDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "${SRCROOT}/OpenGLESFreeTypeDemo/OpenGLESFreeTypeDemo-prefix.pch";
 				INFOPLIST_FILE = OpenGLESFreeTypeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,10 +406,13 @@
 		};
 		BE0DF4952372F9EC00B91699 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA99DDF8106E6B2832DAD7A3 /* Pods-OpenGLESFreeTypeDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "${SRCROOT}/OpenGLESFreeTypeDemo/OpenGLESFreeTypeDemo-prefix.pch";
 				INFOPLIST_FILE = OpenGLESFreeTypeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
