@@ -427,7 +427,7 @@ char *ESUTIL_API esLoadTGA ( void *ioContext, const char *fileName, int *width, 
 #include <ft2build.h>
 #include FT_FREETYPE_H
 
-struct TextureInfo*  textureFrom(char *text)
+struct TextureInfo*  textureFrom(char *text,GLint width,GLint height)
 {
     FT_Library    library;
     FT_Face       face;
@@ -440,20 +440,18 @@ struct TextureInfo*  textureFrom(char *text)
     const char *fontPath = GetBundleFileName("Trebuchet MS.ttf");
     error = FT_New_Face( library, fontPath, 0, &face );/* create face object */
     /* error handling omitted */
-
-    int fontMaxHeight = 50;
     
     /* use 50pt at 100dpi */
-    error = FT_Set_Char_Size( face, fontMaxHeight * 64, 0,
-                              100, 0 );                /* set character size */
+    error = FT_Set_Char_Size( face,
+                             50 * 64,
+                             0,
+                             100,
+                             0 );                /* set character size */
 
     slot = face->glyph;
     size_t charLength = strlen(text);
     unsigned int totalWidth=0;
     unsigned int totalHeight=0;
-    float width=0;
-    float height=0;
-    GetScreenSize(&width, &height);
     totalWidth = width;
     totalHeight = height;
     
@@ -461,6 +459,7 @@ struct TextureInfo*  textureFrom(char *text)
     unsigned int typeSettingX=0;
     unsigned int typeSettingY=0;
     unsigned int aLineHeightMax=0;
+    unsigned int wholeFontHeight = (unsigned int)(face->size->metrics.height/64);
     for (size_t i = 0; i<charLength; i++) {
         char aChar = text[i];
         error = FT_Load_Char( face, aChar, FT_LOAD_RENDER );
@@ -478,17 +477,22 @@ struct TextureInfo*  textureFrom(char *text)
         if (typeSettingY + bitmap.rows > totalHeight){
             break;
         }
-        for (unsigned int row=0; row<bitmap.rows; row++) {
+        //Y方向偏移量 根据字符各不相同
+        unsigned int heightDelta = (unsigned int)(face->size->metrics.ascender)/64 - face->glyph->bitmap_top;
+        for (unsigned int row=0; row<wholeFontHeight; row++) {
             for (unsigned int column=0; column<bitmap.width; column++) {
                 unsigned int absX = typeSettingX+column;
                 unsigned int absY = row+typeSettingY;
-                textureBuffer[absX+totalWidth*absY] = bitmap.buffer[column + bitmap.width*row];
+                if (row>=heightDelta && row<heightDelta+bitmap.rows){
+                    textureBuffer[absX+totalWidth*absY] = bitmap.buffer[column + bitmap.width*(row-heightDelta)];
+                }else{
+                    textureBuffer[absX+totalWidth*absY] = 0;
+                }
             }
         }
         typeSettingX += bitmap.width;
-        if (face->glyph->bitmap.rows > aLineHeightMax){
-            aLineHeightMax = face->glyph->bitmap.rows;
-        }
+        
+        aLineHeightMax = wholeFontHeight;
     }
 
     TextureInfo *result = malloc ( sizeof ( TextureInfo ) );

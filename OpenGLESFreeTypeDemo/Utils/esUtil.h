@@ -335,7 +335,7 @@ esMatrixLookAt ( ESMatrix *result,
                  float lookAtX, float lookAtY, float lookAtZ,
                  float upX,     float upY,     float upZ );
 
-struct TextureInfo*  textureFrom(char *text);
+struct TextureInfo*  textureFrom(char *text,GLint width,GLint height);
 
 void esWindowSize(float* width,float* height);
 

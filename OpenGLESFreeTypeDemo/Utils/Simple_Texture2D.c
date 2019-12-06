@@ -51,9 +51,9 @@ typedef struct
 
 } UserData;
 
-TextureInfo * CreateSimpleTexture2D( )
+TextureInfo * CreateSimpleTexture2D(GLint width,GLint height)
 {
-    return textureFrom("OpenGL ES with FreeType");
+    return textureFrom("OpenGL_ES_with_FreeType_So_Good", width, height);
 }
 
 ///
@@ -91,7 +91,7 @@ int Init ( ESContext *esContext )
    userData->samplerLoc = glGetUniformLocation ( userData->programObject, "s_texture" );
 
    // Load the texture
-   userData->tInfo = CreateSimpleTexture2D ();
+//   userData->tInfo = CreateSimpleTexture2D ();
 
    glClearColor ( 1.0f, 1.0f, 1.0f, 0.0f );
    return TRUE;
@@ -103,6 +103,10 @@ int Init ( ESContext *esContext )
 void Draw ( ESContext *esContext )
 {
    UserData *userData = esContext->userData;
+    if (userData->tInfo != NULL){
+        return;
+    }
+    userData->tInfo = CreateSimpleTexture2D(esContext->width, esContext->height);
     TextureInfo *tInfo = userData->tInfo;
     GLfloat hScale=0;
     GLfloat vScale=0;
