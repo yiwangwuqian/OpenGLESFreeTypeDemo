@@ -467,8 +467,11 @@ struct TextureInfo*  textureFrom(char *text,GLint width,GLint height)
             printf("error code: %d",error);
         }
         FT_Bitmap bitmap = face->glyph->bitmap;
+        //一个字符占位宽
+        FT_Pos aCharAdvance = face->glyph->metrics.horiAdvance/64;
+        FT_Pos aCharHoriBearingX = face->glyph->metrics.horiBearingX/64;
         //大于最大宽度,换行
-        if (typeSettingX + bitmap.width > totalWidth){
+        if (typeSettingX + aCharAdvance > totalWidth){
             typeSettingX = 0;
             typeSettingY += aLineHeightMax;
             aLineHeightMax = 0;
@@ -480,17 +483,21 @@ struct TextureInfo*  textureFrom(char *text,GLint width,GLint height)
         //Y方向偏移量 根据字符各不相同
         unsigned int heightDelta = (unsigned int)(face->size->metrics.ascender)/64 - face->glyph->bitmap_top;
         for (unsigned int row=0; row<wholeFontHeight; row++) {
-            for (unsigned int column=0; column<bitmap.width; column++) {
+            for (unsigned int column=0; column<aCharAdvance; column++) {
                 unsigned int absX = typeSettingX+column;
                 unsigned int absY = row+typeSettingY;
-                if (row>=heightDelta && row<heightDelta+bitmap.rows){
-                    textureBuffer[absX+totalWidth*absY] = bitmap.buffer[column + bitmap.width*(row-heightDelta)];
+                /**
+                 * 1.垂直方向需要绘制的区域范围
+                 * 2.水平方向需要绘制的区域范围
+                 */
+                if (row>=heightDelta && row<heightDelta+bitmap.rows && column>=aCharHoriBearingX && column<aCharHoriBearingX+bitmap.width){
+                    textureBuffer[absX+totalWidth*absY] = bitmap.buffer[column-aCharHoriBearingX + bitmap.width*(row-heightDelta)];
                 }else{
                     textureBuffer[absX+totalWidth*absY] = 0;
                 }
             }
         }
-        typeSettingX += bitmap.width;
+        typeSettingX += aCharAdvance;
         
         aLineHeightMax = wholeFontHeight;
     }
