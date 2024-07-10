@@ -427,6 +427,12 @@ char *ESUTIL_API esLoadTGA ( void *ioContext, const char *fileName, int *width, 
 #include <ft2build.h>
 #include FT_FREETYPE_H
 
+enum TextureFormat {
+    TextureFormatRed,
+    TextureFormatRGB,
+
+};
+
 struct TextureInfo*  textureFrom(char *text,GLint width,GLint height)
 {
     FT_Library    library;
@@ -455,7 +461,13 @@ struct TextureInfo*  textureFrom(char *text,GLint width,GLint height)
     totalWidth = width;
     totalHeight = height;
     
-    GLubyte *textureBuffer = (GLubyte *)calloc(sizeof(GLubyte) * totalWidth * totalHeight * 1, sizeof(GLubyte));
+    enum TextureFormat format = TextureFormatRGB;
+    GLubyte *textureBuffer = NULL;
+    if (format == TextureFormatRed) {
+        textureBuffer = (GLubyte *)calloc(sizeof(GLubyte) * totalWidth * totalHeight * 1, sizeof(GLubyte));
+    }else if (format == TextureFormatRGB) {
+        textureBuffer = (GLubyte *)calloc(sizeof(GLubyte) * totalWidth * totalHeight * 3, sizeof(GLubyte));
+    }
     unsigned int typeSettingX=0;
     unsigned int typeSettingY=0;
     unsigned int aLineHeightMax=0;
@@ -491,9 +503,23 @@ struct TextureInfo*  textureFrom(char *text,GLint width,GLint height)
                  * 2.水平方向需要绘制的区域范围
                  */
                 if (row>=heightDelta && row<heightDelta+bitmap.rows && column>=aCharHoriBearingX && column<aCharHoriBearingX+bitmap.width){
-                    textureBuffer[absX+totalWidth*absY] = bitmap.buffer[column-aCharHoriBearingX + bitmap.width*(row-heightDelta)];
+                    if (format == TextureFormatRed) {
+                        textureBuffer[absX+totalWidth*absY] = bitmap.buffer[column-aCharHoriBearingX + bitmap.width*(row-heightDelta)];
+                    } else if (format == TextureFormatRGB) {
+                        int value = bitmap.buffer[column-aCharHoriBearingX + bitmap.width*(row-heightDelta)];
+                        //现在的写法是蓝色
+                        textureBuffer[(absX+totalWidth*absY)*3] = 0;
+                        textureBuffer[(absX+totalWidth*absY)*3 + 1] = 0;
+                        textureBuffer[(absX+totalWidth*absY)*3 + 2] = value;
+                    }
                 }else{
-                    textureBuffer[absX+totalWidth*absY] = 0;
+                    if (format == TextureFormatRed) {
+                        textureBuffer[absX+totalWidth*absY] = 0;
+                    } else if (format == TextureFormatRGB) {
+                        textureBuffer[absX+totalWidth*absY*3] = 0;
+                        textureBuffer[absX+totalWidth*absY*3 + 1] = 0;
+                        textureBuffer[absX+totalWidth*absY*3 + 2] = 0;
+                    }
                 }
             }
         }
@@ -515,7 +541,11 @@ struct TextureInfo*  textureFrom(char *text,GLint width,GLint height)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_R8, totalWidth, totalHeight, 0, GL_RED, GL_UNSIGNED_BYTE, textureBuffer);
+    if (format == TextureFormatRed) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_R8, totalWidth, totalHeight, 0, GL_RED, GL_UNSIGNED_BYTE, textureBuffer);
+    } else if (format == TextureFormatRGB) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, totalWidth, totalHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, textureBuffer);
+    }
     result->textureId = texName;
     
     free(textureBuffer);
